@@ -1,0 +1,26 @@
+---
+title: "p8105_hw1_ren2121"
+output: html_document
+date: "2025-09-13"
+---
+
+##Problem 1
+
+Loading the "moderndive" library and the "early_january_weather" dataset:
+
+```{r}
+library(moderndive)
+data("early_january_weather")
+```
+
+**Description of the "Early January Weather" Dataset:**
+
+The variables in the dataset are as follows: `r names(early_january_weather)`.
+
+This dataset has `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.
+
+The mean temperature in early January was `r mean(early_january_weather$temp)` degrees.
+
+
+
+
