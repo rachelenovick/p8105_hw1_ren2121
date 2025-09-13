@@ -4,7 +4,7 @@ output: html_document
 date: "2025-09-13"
 ---
 
-##Problem 1
+# Problem 1
 
 Loading the "moderndive" library and the "early_january_weather" dataset:
 
@@ -13,7 +13,7 @@ library(moderndive)
 data("early_january_weather")
 ```
 
-**Description of the "Early January Weather" Dataset:**
+**Description of the "Early January Weather" dataset:**
 
 The variables in the dataset are as follows: `r names(early_january_weather)`.
 
@@ -21,6 +21,18 @@ This dataset has `r nrow(early_january_weather)` rows and `r ncol(early_january_
 
 The mean temperature in early January was `r mean(early_january_weather$temp)` degrees.
 
+**Creating a scatterplot**
 
+```{r}
+#Loading the library
+library(ggplot2)
+#Creating the plot
+(temp_vs_time <- ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) +
+    geom_point())
+#Saving the plot
+ggsave("temp_vs_time.pdf", plot = temp_vs_time, height = 4, width = 6)
+```
 
+As time (hours) increases, temperature generally increases, but it oscillates up and down along the way. This likely reflects daily rises and falls with the sun.
 
+# Problem 2
