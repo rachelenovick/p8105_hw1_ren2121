@@ -383,6 +383,24 @@ and falls with the sun.</p>
 </div>
 <div id="problem-2" class="section level1">
 <h1>Problem 2</h1>
+<p>Creating a dataframe:</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ lubridate 1.9.4     ✔ tibble    3.3.0
+## ✔ purrr     1.1.0     ✔ tidyr     1.3.1
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre class="r"><code>my_df = tibble(
+  x = rnorm(10),
+  x_pos = x &gt; 0,
+  vec_char = c(&quot;r&quot;, &quot;is&quot;, &quot;kinda&quot;, &quot;hard&quot;, &quot;and&quot;, &quot;i&quot;, &quot;am&quot;, &quot;learning&quot;, &quot;it&quot;, &quot;slowly&quot;),
+  vec_factor = factor(c(&quot;tea&quot;, &quot;coffee&quot;, &quot;oj&quot;, &quot;oj&quot;, &quot;coffee&quot;, &quot;tea&quot;, &quot;oj&quot;, &quot;tea&quot;, &quot;coffee&quot;, &quot;oj&quot;))
+)</code></pre>
+<p>Taking the mean of each of my variables:</p>
 </div>
 
 

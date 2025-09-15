@@ -36,3 +36,35 @@ ggsave("temp_vs_time.pdf", plot = temp_vs_time, height = 4, width = 6)
 As time (hours) increases, temperature generally increases, but it oscillates up and down along the way. This likely reflects daily rises and falls with the sun.
 
 # Problem 2
+
+Creating a dataframe:
+
+```{r}
+library(tidyverse)
+my_df = tibble(
+  x = rnorm(10),
+  x_pos = x > 0,
+  vec_char = c("r", "is", "kinda", "hard", "and", "i", "am", "learning", "it", "slowly"),
+  vec_factor = factor(c("tea", "coffee", "oj", "oj", "coffee", "tea", "oj", "tea", "coffee", "oj"))
+)
+```
+
+Taking the mean of each of my variables:
+
+```{r}
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
