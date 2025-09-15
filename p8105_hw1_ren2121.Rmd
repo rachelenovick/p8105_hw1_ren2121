@@ -64,9 +64,27 @@ When I try to take the mean of vec_char, I get 'NA' using the code 'mean(pull(my
 Finally, when I try taking the mean of vec_factor, I get an error message using the code 'mean(pull)(my_df, vec_factor)'.
   R tells me that I am attempting to 'apply non-function.'
 
+**Converting variable types:**
 
+```{r results = 'hide', warning = FALSE}
+as.numeric(my_df$x_pos)
+as.numeric(my_df$vec_char)
+as.numeric(my_df$vec_factor)
+```
 
+When I try to force convert my variables to numeric type, my factor vector now takes values of 1, 2, or 3.  
+>   This makes sense because I created 3 categories, and R simply assigned each category a number.
 
+My x-pos vector now takes values of 0 or 1.  
+>   This is because either it is true that a value in my random sample is greater than 0, or it is false. Therefore, R was able to assign 0 or 1 to indicate true or false.
+
+However, when I tried to convert vec_char, each value became an 'NA' and a warning message appeared that  
+> read "NAs introduced by coercion".  
+>   R could not convert my characters to numbers.
+
+This explains what happens when I try to take the mean of each of my variables, because whether or not R was  
+able to complete this task for me depended on whether R could find a way to convert my variables to a  
+numeric type.
 
 
 

@@ -401,7 +401,7 @@ and falls with the sun.</p>
   vec_factor = factor(c(&quot;tea&quot;, &quot;coffee&quot;, &quot;oj&quot;, &quot;oj&quot;, &quot;coffee&quot;, &quot;tea&quot;, &quot;oj&quot;, &quot;tea&quot;, &quot;coffee&quot;, &quot;oj&quot;))
 )</code></pre>
 <p><strong>Taking the mean of each of my variables:</strong></p>
-<p>Mean of variable x = 0.2216546</p>
+<p>Mean of variable x = 0.0492744</p>
 <p>Mean of variable x_pos = 0.5 When I take the mean of variable x_pos,
 a value is returned, however it does not make sense given that my
 variable is a logical vector with values of <em>true</em> and
@@ -413,6 +413,27 @@ returning NA.’</p>
 <p>Finally, when I try taking the mean of vec_factor, I get an error
 message using the code ‘mean(pull)(my_df, vec_factor)’. R tells me that
 I am attempting to ‘apply non-function.’</p>
+<p><strong>Converting variable types:</strong></p>
+<pre class="r"><code>as.numeric(my_df$x_pos)
+as.numeric(my_df$vec_char)
+as.numeric(my_df$vec_factor)</code></pre>
+<p>When I try to force convert my variables to numeric type, my factor
+vector now takes values of 1, 2, or 3.<br />
+&gt; This makes sense because I created 3 categories, and R simply
+assigned each category a number.</p>
+<p>My x-pos vector now takes values of 0 or 1.<br />
+&gt; This is because either it is true that a value in my random sample
+is greater than 0, or it is false. Therefore, R was able to assign 0 or
+1 to indicate true or false.</p>
+<p>However, when I tried to convert vec_char, each value became an ‘NA’
+and a warning message appeared that<br />
+&gt; read “NAs introduced by coercion”.<br />
+&gt; R could not convert my characters to numbers.</p>
+<p>This explains what happens when I try to take the mean of each of my
+variables, because whether or not R was<br />
+able to complete this task for me depended on whether R could find a way
+to convert my variables to a<br />
+numeric type.</p>
 </div>
 
 
