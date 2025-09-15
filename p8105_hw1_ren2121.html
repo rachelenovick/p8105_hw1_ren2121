@@ -400,7 +400,19 @@ and falls with the sun.</p>
   vec_char = c(&quot;r&quot;, &quot;is&quot;, &quot;kinda&quot;, &quot;hard&quot;, &quot;and&quot;, &quot;i&quot;, &quot;am&quot;, &quot;learning&quot;, &quot;it&quot;, &quot;slowly&quot;),
   vec_factor = factor(c(&quot;tea&quot;, &quot;coffee&quot;, &quot;oj&quot;, &quot;oj&quot;, &quot;coffee&quot;, &quot;tea&quot;, &quot;oj&quot;, &quot;tea&quot;, &quot;coffee&quot;, &quot;oj&quot;))
 )</code></pre>
-<p>Taking the mean of each of my variables:</p>
+<p><strong>Taking the mean of each of my variables:</strong></p>
+<p>Mean of variable x = 0.2216546</p>
+<p>Mean of variable x_pos = 0.5 When I take the mean of variable x_pos,
+a value is returned, however it does not make sense given that my
+variable is a logical vector with values of <em>true</em> and
+<em>false</em>.</p>
+<p>When I try to take the mean of vec_char, I get ‘NA’ using the code
+‘mean(pull(my_df, vec_char))’: I cannot take the mean of a character
+vector, and R tells me that the ‘argument is not numeric or logical:
+returning NA.’</p>
+<p>Finally, when I try taking the mean of vec_factor, I get an error
+message using the code ‘mean(pull)(my_df, vec_factor)’. R tells me that
+I am attempting to ‘apply non-function.’</p>
 </div>
 
 

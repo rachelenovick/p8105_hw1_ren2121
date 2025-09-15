@@ -49,13 +49,20 @@ my_df = tibble(
 )
 ```
 
-Taking the mean of each of my variables:
+**Taking the mean of each of my variables:**
 
-```{r}
+Mean of variable x = `r mean(pull(my_df, x))`
 
+Mean of variable x_pos = `r mean(pull(my_df, x_pos))`
+  When I take the mean of variable x_pos, a value is returned, however it does not make sense given
+  that my variable is a logical vector with values of _true_ and _false_.
 
-```
+When I try to take the mean of vec_char, I get 'NA' using the code 'mean(pull(my_df, vec_char))':
+  I cannot take the mean of a character vector, and R tells me that the 'argument is not numeric or
+  logical: returning NA.'
 
+Finally, when I try taking the mean of vec_factor, I get an error message using the code 'mean(pull)(my_df, vec_factor)'.
+  R tells me that I am attempting to 'apply non-function.'
 
 
 
